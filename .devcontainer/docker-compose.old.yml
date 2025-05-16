@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  Service1:
+    build: .
+    volumes:
+      - ..:/workspace:cached
+    depends_on:
+      - SQL1
+      - SQL2
+  SQL1:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: SQL1
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=ABCabc123.
+    ports:
+      - 1401:1433
+  SQL2:
+    image: mcr.microsoft.com/mssql/server:2016-latest
+    container_name: SQL2
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=ABCabc123.
+    ports:
+      - 1402:1433
