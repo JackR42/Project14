@@ -1,25 +1,9 @@
-version: '3.8'
+version: '3.1'
 services:
-  Service1:
-    build: .
-    volumes:
-      - ..:/workspace:cached
-    depends_on:
-      - SQL1
-      - SQL2
-  SQL1:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: SQL1
+  sqlsrv:
+    image: mcr.microsoft.com/mssql/server:latest
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=ABCabc123.
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "YourStrongPassword" # Replace with a strong password
     ports:
-      - 1401:1433
-  SQL2:
-    image: mcr.microsoft.com/mssql/server:2016-latest
-    container_name: SQL2
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=ABCabc123.
-    ports:
-      - 1402:1433
+      - "1433:1433"
