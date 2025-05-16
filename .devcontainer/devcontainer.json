@@ -1,37 +1,13 @@
 {
-  "name": "DBDev Container",
+  "name": "DB Container",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "Service1",
   "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-azuretools.vscode-docker",
         "mssql.mssql"
-      ],
-      "settings": {
-        "sqltools.connections": [
-          {
-            "name": "SRV1",
-            "driver": "SQLServer",
-            "server": "SQL1",
-            "port": 1401,
-            "database": "master",
-            "username": "sa",
-            "password": "ABCabc123."
-          },
-          {
-            "name": "SVR2",
-            "driver": "SQLServer",
-            "server": "SQL2",
-            "port": 1402,
-            "database": "master",
-            "username": "sa",
-            "password": "ABCabc123."
-          },
-        ]
-      }
+      ]
     }
-  },
-  "postCreateCommand": "npm install"
+  }
 }
