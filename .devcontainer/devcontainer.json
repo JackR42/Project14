@@ -1,5 +1,7 @@
 {
   "name": "DBA Codespace Dev Container",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "db1",
   "customizations": {
     "vscode": {
       "extensions": [
